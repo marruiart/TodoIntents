@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- TODO: Dar formato al item para que se vea titulo, descripción y estado dentro de un MaterialCard -->
+    <!-- TODO: Añadir Botón de detalle -->
+    <!-- TODO: Añadir botón de compartir -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
