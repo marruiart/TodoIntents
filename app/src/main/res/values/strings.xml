@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ToDo</string>
+    <!-- CreateToDoActivity -->
+    <string name="cre_todo_act_label_name">Tarea</string>
+    <string name="cre_todo_act_label_description">Descripción</string>
+    <string name="cre_todo_act_submit_btn">Aceptar</string>
 </resources>
