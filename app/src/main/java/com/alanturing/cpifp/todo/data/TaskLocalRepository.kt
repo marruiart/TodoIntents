@@ -31,11 +31,18 @@ class TaskLocalRepository() {
 
     fun add(task: Task) {
         _tasks.add(task)
-        Log.d("REPO", _tasks.toString())
     }
 
     fun delete(id: Int) {
-        //TODO("Código eliminar tarea por id")
+        var task: Task? = null;
+        _tasks.forEach { t ->
+            if (t.id == id) {
+                task = t
+            }
+        }
+        if (task != null) {
+            _tasks.remove(task)
+        }
     }
 
     fun update(task: Task) {
