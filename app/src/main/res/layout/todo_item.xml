@@ -29,7 +29,7 @@
             android:textColor="?attr/colorOnSurface"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/task_state"
-            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/task_state"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Tarea" />
@@ -55,13 +55,25 @@
 
         <Button
             android:id="@+id/share_btn"
-            style="?attr/materialIconButtonStyle"
-            android:layout_width="wrap_content"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
             android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text="@string/item_share_btn"
             app:icon="@drawable/ic_share"
             app:iconTint="?attr/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/task_state" />
+            app:layout_constraintStart_toStartOf="@+id/materialDivider"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+        <Button
+            android:id="@+id/edit_btn"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text="@string/item_edit_btn"
+            app:icon="@drawable/ic_edit"
+            app:iconTint="?attr/colorPrimary"
+            app:layout_constraintStart_toEndOf="@+id/share_btn"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/materialDivider"
@@ -71,6 +83,8 @@
             app:dividerInsetEnd="16dp"
             app:dividerInsetStart="16dp"
             app:layout_constraintTop_toBottomOf="@id/task_description" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

@@ -12,11 +12,13 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" >
     </androidx.recyclerview.widget.RecyclerView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/create_todo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
+        android:contentDescription="@string/main_create_btn"
+        android:text="@string/main_create_btn"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_add" />
+        app:icon="@drawable/ic_add" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

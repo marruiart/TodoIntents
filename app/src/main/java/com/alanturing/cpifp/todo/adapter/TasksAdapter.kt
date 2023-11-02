@@ -1,6 +1,7 @@
 package com.alanturing.cpifp.todo.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alanturing.cpifp.todo.databinding.TodoItemBinding
@@ -11,7 +12,12 @@ interface TaskClickedListener {
     fun onTaskLongClicked(task: Task)
 }
 
-class TasksAdapter(val tasks: List<Task>, private val taskClickedListener: TaskClickedListener) :
+class TasksAdapter(
+    private val tasks: List<Task>,
+    private val taskClickedListener: TaskClickedListener,
+    private val onShare: ((t: Task, v: View) -> Unit), // onShare function
+    private val onEdit: ((t: Task, v: View) -> Unit)
+) :
     RecyclerView.Adapter<TasksAdapter.TaskViewHolder>() {
 
     inner class TaskViewHolder(private val binding: TodoItemBinding) :
@@ -20,6 +26,13 @@ class TasksAdapter(val tasks: List<Task>, private val taskClickedListener: TaskC
             binding.taskName.text = t.title
             binding.taskDescription.text = t.description
             binding.taskState.isChecked = t.isCompleted
+            // Bind share button with onShare function
+            binding.shareBtn.setOnClickListener {
+                onShare(t, it)
+            }
+            binding.editBtn.setOnClickListener {
+                onEdit(t, it)
+            }
         }
     }
 
