@@ -11,8 +11,9 @@ class CreateToDoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateToDoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val repository = TaskLocalRepository.getInstance()
         super.onCreate(savedInstanceState)
+        val repository = TaskLocalRepository.getInstance()
+
         binding = ActivityCreateToDoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

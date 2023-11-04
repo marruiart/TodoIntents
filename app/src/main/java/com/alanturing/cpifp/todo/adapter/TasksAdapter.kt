@@ -3,6 +3,7 @@ package com.alanturing.cpifp.todo.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import com.alanturing.cpifp.todo.databinding.TodoItemBinding
 import com.alanturing.cpifp.todo.model.Task
@@ -15,6 +16,7 @@ interface TaskClickedListener {
 class TasksAdapter(
     private val tasks: List<Task>,
     private val taskClickedListener: TaskClickedListener,
+    private val onTaskCompleted: ((t: Task, b: Boolean) -> Unit),
     private val onShare: ((t: Task, v: View) -> Unit), // onShare function
     private val onEdit: ((t: Task, v: View) -> Unit)
 ) :
@@ -27,6 +29,9 @@ class TasksAdapter(
             binding.taskDescription.text = t.description
             binding.taskState.isChecked = t.isCompleted
             // Bind share button with onShare function
+            binding.taskState.setOnCheckedChangeListener { _, isCompleted ->
+                onTaskCompleted(t, isCompleted)
+            }
             binding.shareBtn.setOnClickListener {
                 onShare(t, it)
             }

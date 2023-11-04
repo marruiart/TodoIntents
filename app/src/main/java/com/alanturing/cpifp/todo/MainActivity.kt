@@ -64,18 +64,26 @@ class MainActivity : AppCompatActivity() {
                     updateRecyclerView()
                 }
             },
+            ::onTaskCompleted,
             ::onShareItem, // pass a function through parameters -> member operator
-            ::onEditItem
+            ::onEditItem,
         )
     }
 
-    fun onEditItem(task: Task, view: View) {
+    fun onTaskCompleted(task: Task, isCompleted: Boolean) {
+        task.isCompleted = isCompleted
+        TaskLocalRepository.getInstance().update(task)
+    }
 
+    fun onEditItem(task: Task, view: View) {
+        val intent = Intent(this, EditTaskActivity::class.java)
+        intent.putExtra("task", task)
+        getResult.launch(intent)
     }
 
     fun onShareItem(task: Task, view: View) {
         val statusText = if (task.isCompleted) "Completada" else "Pendiente"
-        val shareText = getString(R.string.share_text,task.title, task.description, statusText)
+        val shareText = getString(R.string.share_text, task.title, task.description, statusText)
 
         val intent = Intent().apply {
             action = Intent.ACTION_SEND // this intent is going to send sth

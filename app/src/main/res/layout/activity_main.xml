@@ -17,8 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:contentDescription="@string/main_create_btn"
-        android:text="@string/main_create_btn"
+        android:contentDescription="@string/create_task_btn"
+        android:text="@string/create_task_btn"
         android:layout_margin="16dp"
         app:icon="@drawable/ic_add" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

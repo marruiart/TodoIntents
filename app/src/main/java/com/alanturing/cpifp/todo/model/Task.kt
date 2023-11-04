@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Task(
     val id: Int,
-    val title: String,
-    val description: String,
-    val isCompleted: Boolean
+    var title: String,
+    var description: String,
+    var isCompleted: Boolean
 ) : Parcelable

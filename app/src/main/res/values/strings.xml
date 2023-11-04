@@ -1,12 +1,16 @@
 <resources>
+    <!-- General -->
     <string name="app_name">ToDo</string>
+    <string name="cancel_btn">Cancelar</string>
+    <string name="create_task_btn">Crear tarea</string>
+    <!-- MainActivity -->
+    <string name="share_text">Título: %s - Descripción: %s - Estado: %s</string>
     <!-- CreateToDoActivity -->
-    <string name="cre_todo_act_label_name">Tarea</string>
-    <string name="cre_todo_act_label_description">Descripción</string>
-    <string name="cre_todo_act_submit_btn">Crear tarea</string>
-    <string name="cre_todo_act_cancel_btn">Cancelar</string>
-    <string name="main_create_btn">Crear tarea</string>
+    <string name="label_name">Tarea</string>
+    <string name="label_description">Descripción</string>
+    <!-- TaskItem -->
     <string name="item_share_btn">Compartir</string>
     <string name="item_edit_btn">Editar</string>
-    <string name="share_text">Título: %s - Descripción: %s - Estado: %s</string>
+    <!-- EditTaskActivity -->
+    <string name="edit_task_btn">Editar tarea</string>
 </resources>

@@ -45,8 +45,10 @@ class TaskLocalRepository() {
         }
     }
 
-    fun update(task: Task) {
-        //TODO("Código actualizar tarea con id==id")
+    fun update(updatedTask: Task) {
+        val index = _tasks.indexOfFirst { it.id == updatedTask.id }
+        _tasks[index] = updatedTask
+        Log.d("tasks", _tasks.toString())
     }
 
     fun getNextTaskId() = ++countId

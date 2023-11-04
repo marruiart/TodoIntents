@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/cre_todo_act_label_name"
+        android:hint="@string/label_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -31,7 +31,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/cre_todo_act_label_description"
+        android:hint="@string/label_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameTf">
@@ -50,11 +50,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/cre_todo_act_cancel_btn"
+        android:text="@string/cancel_btn"
         app:layout_constraintEnd_toStartOf="@id/submitBtn"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/descriptionTf" />
+        app:layout_constraintTop_toBottomOf="@+id/status_switch" />
 
     <Button
         android:id="@+id/submitBtn"
@@ -62,10 +62,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/cre_todo_act_submit_btn"
+        android:text="@string/edit_task_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cancelBtn"
-        app:layout_constraintTop_toBottomOf="@id/descriptionTf" />
+        app:layout_constraintTop_toTopOf="@+id/cancelBtn" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/status_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Pendiente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTf" />
 </androidx.constraintlayout.widget.ConstraintLayout>
